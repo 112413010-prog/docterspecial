@@ -1,0 +1,54 @@
+<label for="specialist">Select Specialist</label>
+
+<select id="specialist" onchange="showDoctors()">
+    <option value="">-- Select Specialist --</option>
+    <option value="cardiology">Cardiology</option>
+    <option value="dermatology">Dermatology</option>
+    <option value="dentist">Dentist</option>
+</select>
+
+<div id="doctors"></div>
+
+<script>
+function showDoctors() {
+    let specialist = document.getElementById("specialist").value;
+    let doctors = document.getElementById("doctors");
+
+    if (specialist === "cardiology") {
+        doctors.innerHTML = `
+            <h3>Select Doctor</h3>
+            <input type="radio" name="doctor" value="Dr. Arun">
+            Dr. Arun<br>
+
+            <input type="radio" name="doctor" value="Dr. Kumar">
+            Dr. Kumar
+        `;
+    }
+
+    else if (specialist === "dermatology") {
+        doctors.innerHTML = `
+            <h3>Select Doctor</h3>
+            <input type="radio" name="doctor" value="Dr. Priya">
+            Dr. Priya<br>
+
+            <input type="radio" name="doctor" value="Dr. Anitha">
+            Dr. Anitha
+        `;
+    }
+
+    else if (specialist === "dentist") {
+        doctors.innerHTML = `
+            <h3>Select Doctor</h3>
+            <input type="radio" name="doctor" value="Dr. Ravi">
+            Dr. Ravi<br>
+
+            <input type="radio" name="doctor" value="Dr. Meena">
+            Dr. Meena
+        `;
+    }
+
+    else {
+        doctors.innerHTML = "";
+    }
+}
+</script>
